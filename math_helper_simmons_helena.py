@@ -50,6 +50,11 @@ def pythagorean_theorem(a,b):
     c = round(c,2)
     print(c)
     
+def perfect_square_trinomial(a,b,c):
+    
+    
+    
+
 if __name__ == "__main__":
     #dist_formula(1,1,1,2)
     import doctest
