@@ -27,11 +27,28 @@ def dist_formula(x1,y1,x2,y2):
     >>> dist_formula(3,7,5,7)
     2.0
     
-    >>> dist_formula(-1,-1,-5,-1)
-    4.0
+    >>> dist_formula(2,3,4,5)
+    2.83
     '''
     dist = math.sqrt((x1-x2)**2+(y1-y2)**2)
+    dist= round(dist,2)
     print(dist)
+    
+def pythagorean_theorem(a,b):
+    ''' pythagorean theorem. Gives back the value of c. 
+    
+    >>> pythagorean_theorem(3,4)  
+    5.0
+    
+    >>> pythagorean_theorem(7,24) 
+    25.0
+    
+    >>> pythagorean_theorem(361,42) 
+    363.44
+    '''
+    c = math.sqrt(a**2 + b**2)
+    c = round(c,2)
+    print(c)
     
 if __name__ == "__main__":
     #dist_formula(1,1,1,2)
