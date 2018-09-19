@@ -1,22 +1,16 @@
 import math 
     
-def vertex_form():
+def vertex_form_to_trinomial(a,h,k):
     '''returns h and k, the coordinates to the vertex.
 
     '''
     standard_equation = 'y = a(x-h)^2 + k'
-    a = int(input('a = '))
-    b = int(input('b = '))
-    c = int(input('c = '))
-    y = int(input('y = '))
-    x = int(input('x = '))
-    
-    print(a)
+#    a = int(input('a = '))
+#    b = int(input('b = '))
+#    c = int(input('c = '))
+#    y = int(input('y = '))
+#    x = int(input('x = '))
 
-#x1 = int(input('x1 = '))
-#y1 = int(input('y1 = '))
-#x2 = int(input('x2 = '))
-#y2 = int(input('y2 = '))
 
 def dist_formula(x1,y1,x2,y2):
     ''' returns the distance between two sets of coordinates
@@ -50,9 +44,8 @@ def pythagorean_theorem(a,b):
     c = round(c,2)
     print(c)
     
-#def perfect_square_trinomial(a,b,c):
-#    
-#    
+    
+    
 
 def multiply_binomials(a1,b1,a2,b2):
     '''multiplies two binomials into a trinomial.
@@ -73,9 +66,33 @@ def multiply_binomials(a1,b1,a2,b2):
     sum = o+i
     ans = (f"{f}x^2 + {sum}x + {l}")
     print(ans)
+    
+def slope(x1,y1,x2,y2):
+    '''gives the slope between two points. 
+    
+    >>> slope(-1,-3,2,-5)
+    -2 / 3
+    
+    >>> slope(0,42,0,5)
+    undefined
+    '''
+    rise = (y2-y1)
+    run = (x2-x1)
+    if run == 0:
+        m = "undefined"
+        print(m)
+    else:
+        m = (f"{rise} / {run}")
+        print(m)
+    
+    
+    
+    
+    
+    
+    
 
 if __name__ == "__main__":
-    #dist_formula(1,1,1,2)
     import doctest
     doctest.testmod()
 
