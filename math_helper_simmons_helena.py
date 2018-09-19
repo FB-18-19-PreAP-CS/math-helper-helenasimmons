@@ -50,10 +50,29 @@ def pythagorean_theorem(a,b):
     c = round(c,2)
     print(c)
     
-def perfect_square_trinomial(a,b,c):
+#def perfect_square_trinomial(a,b,c):
+#    
+#    
+
+def multiply_binomials(a1,b1,a2,b2):
+    '''multiplies two binomials into a trinomial.
     
+    >>> multiply_binomials(3,-5,1,7)
+    3x^2 + 16x + -35
     
+    >>> multiply_binomials(1,2,1,-3)
+    1x^2 + -1x + -6
     
+    >>> multiply_binomials(1,1,2,-5)
+    2x^2 + -3x + -5
+    '''
+    f = a1 * a2
+    o = a1 * b2
+    i = b1 * a2
+    l = b1 * b2
+    sum = o+i
+    ans = (f"{f}x^2 + {sum}x + {l}")
+    print(ans)
 
 if __name__ == "__main__":
     #dist_formula(1,1,1,2)
