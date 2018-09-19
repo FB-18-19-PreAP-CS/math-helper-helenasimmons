@@ -1,15 +1,10 @@
 import math 
     
-def vertex_form_to_trinomial(a,h,k):
-    '''returns h and k, the coordinates to the vertex.
-
-    '''
-    standard_equation = 'y = a(x-h)^2 + k'
-#    a = int(input('a = '))
-#    b = int(input('b = '))
-#    c = int(input('c = '))
-#    y = int(input('y = '))
-#    x = int(input('x = '))
+#def vertex_form_to_trinomial(a,h,k):
+#    '''returns h and k, the coordinates to the vertex.
+#
+#    '''
+#    standard_equation = 'y = a(x-h)^2 + k'
 
 
 def dist_formula(x1,y1,x2,y2):
@@ -75,22 +70,21 @@ def slope(x1,y1,x2,y2):
     
     >>> slope(0,42,0,5)
     undefined
+    
+    >>> slope(42,0,5,0)
+    0
     '''
     rise = (y2-y1)
     run = (x2-x1)
     if run == 0:
         m = "undefined"
         print(m)
+    if rise == 0:
+        m = 0
+        print(m)
     else:
         m = (f"{rise} / {run}")
         print(m)
-    
-    
-    
-    
-    
-    
-    
 
 if __name__ == "__main__":
     import doctest
