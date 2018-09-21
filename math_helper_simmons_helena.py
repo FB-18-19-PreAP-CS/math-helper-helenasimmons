@@ -11,6 +11,12 @@ def dist_formula(x1,y1,x2,y2):
     
     >>> dist_formula(2,3,4,5)
     2.83
+    
+    >>> dist_formula(10,0,0,4)
+    10.77
+    
+    >>> dist_formula(–7,–2,6,9)
+    17.03
     '''
     dist = math.sqrt((x1-x2)**2+(y1-y2)**2)
     dist= round(dist,2)
@@ -59,8 +65,8 @@ def slope(x1,y1,x2,y2):
     '''gives the slope between two points. 
     
     >>> slope(-1,-3,2,-5)
-    -2 / 3
-    
+    0.66
+
     >>> slope(0,42,0,5)
     undefined
     
@@ -76,10 +82,10 @@ def slope(x1,y1,x2,y2):
         m = 0
         print(m)
     elif run != 0 and rise != 0:
-        m = (f"{rise} / {run}")
+        m = round(rise/run,2)
         print(m)
         
-def point_slope(x1,y1,m):
+def slope(x1,y1,m):
     '''uses point slope form
 
     >>> point_slope(-4,7, 1/4)
@@ -115,7 +121,17 @@ def main():
     if n == '3':
         multiply_binomials()
     if n == '4':
-        slope()        
+        x1 = int(input('x1: '))
+        y1 = int(input('y1: '))
+        x2 = int(input('x2: '))
+        y2 = int(input('y2: '))
+        slope(x1,y1,x2,y2)
+    if n == '5':
+        x1 = int(input('x1: '))
+        y1 = int(input('y1: '))
+        m = int(input('m: '))
+        
+        slope(x1,y1,m)
 
 
 if __name__ == "__main__":
