@@ -130,15 +130,18 @@ def slope_intercept_form(x1,y1,m):
         
 def main():
     print('Hello there!')
+    print('Welcome to the calculator!')
     print('What do you want to do?')
     print()
-    print('1. Distance Formula')
-    print('2. Pythagorean Theorem')
-    print('3. Multiply binomials in the form of (ax + b)(cx + d)')
-    print('4. Find the slope between two points.')
-    print('5. Point Slope Form')
-    print()
     while True:
+        print('1. Distance Formula')
+        print('2. Pythagorean Theorem')
+        print('3. Multiply binomials in the form of (ax + b)(cx + d)')
+        print('4. Find the slope between two points.')
+        print('5. Point Slope Form')
+        print()
+        print('6. Exit Program')
+        print()
         n = input('> ')
         if n == '1':
             print()
@@ -147,20 +150,21 @@ def main():
             x2 = float(input('x2: '))
             y2 = float(input('y2: '))
             dist_formula(x1,y1,x2,y2)
-            break
+            print()
         if n == '2':
             print()
             a = float(input('a: '))
             b = float(input('b: '))
             pythagorean_theorem(a,b)
+            print()
         if n == '3':
-            a1 = float(input('a1: '))
-            b1 = float(input('b1: '))
-            a2 = float(input('a2: '))
-            b2 = float(input('b2: '))
+            a1 = float(input('a: '))
+            b1 = float(input('b: '))
+            a2 = float(input('c: '))
+            b2 = float(input('d: '))
             print()
             multiply_binomials(a1,b1,a2,b2)
-            break
+            print()
         if n == '4':
             print()
             x1 = float(input('x1: '))
@@ -168,7 +172,7 @@ def main():
             x2 = float(input('x2: '))
             y2 = float(input('y2: '))
             slope(x1,y1,x2,y2)
-            break
+            print()
         if n == '5':
             print()
             print('Please enter your coordinates and the slope.')
@@ -176,9 +180,14 @@ def main():
             y1 = float(input('y1: '))
             m = float(input('m: '))
             slope_intercept_form(x1,y1,m)
-            break
-        if n != '1' and n != '2' and n != '3' and n != '4' and n != '5':
+            print()
+        if n != '1' and n != '2' and n != '3' and n != '4' and n != '5' and n != '6':
             print('That was not one of the listed choices!')
+        if n == '6':
+            print()
+            print('Thank you for using the calculator.')
+            print('Have a great day!')
+            break
 
 
 if __name__ == "__main__":
