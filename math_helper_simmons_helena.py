@@ -21,7 +21,7 @@ def dist_formula(x1,y1,x2,y2):
     dist = math.sqrt((x1-x2)**2+(y1-y2)**2)
     dist= round(dist,2)
     print(dist)
-    
+
 def pythagorean_theorem(a,b):
     ''' pythagorean theorem. Gives back the value of c. 
     
@@ -40,13 +40,15 @@ def pythagorean_theorem(a,b):
     >>> pythagorean_theorem(7,4412)
     4412.01
     '''
+#    while True:
+#        if type(a) == float and type(b) == float:
     if a <= 0 or b <= 0:
-        print('A side of a triangle shouldn\'t be negative or zero!')
+        print('A side of a triangle shouldn\'t be negative or zero!')    
     elif a != 0 and b != 0:
         c = math.sqrt(a**2 + b**2)
         c = round(c,2)
         print(c)
-
+                
 def multiply_binomials(a1,b1,a2,b2):
     '''multiplies two binomials into a trinomial.
     
@@ -106,7 +108,7 @@ def slope(x1,y1,x2,y2):
 def slope_intercept_form(x1,y1,m):
     '''uses point slope form
 
-    >>> slope_intercept_form(-4,7, 1/4)
+    >>> slope_intercept_form(-4,7, 0.25)
     y = 0.25x + 8.0
     
     >>> slope_intercept_form(3,7,12)
@@ -128,8 +130,8 @@ def slope_intercept_form(x1,y1,m):
     o = (f'y = {m}x + {b}')
     print(o)
     
-def circum(r):
-    ''' returns he cirumference of a circle when given
+def circum(r): #from Kyle 
+    ''' returns the cirumference of a circle when given
         the radius, rounded to 2 deciaml places
         
         >>> circum(5)
@@ -156,11 +158,12 @@ def circum(r):
     return c
         
 def main():
-    print('Hello there!')
+    print('       Hello there!')
     print('Welcome to the calculator!')
-    print('What do you want to do?')
     print()
     while True:
+        print('Which formula do you want to use?')
+        print()
         print('1. Distance Formula')
         print('2. Pythagorean Theorem')
         print('3. Multiply binomials in the form of (ax + b)(cx + d)')
@@ -170,69 +173,75 @@ def main():
         print()
         print('7. Exit Program')
         print()
-        n = input('> ')
-        if n == '1':
+        try:
+            n = input('> ')
+            if n == '1':
+                print()
+                x1 = float(input('x1: '))
+                y1 = float(input('y1: '))
+                x2 = float(input('x2: '))
+                y2 = float(input('y2: '))
+                print()
+                dist_formula(x1,y1,x2,y2)
+                print()
+            if n == '2':
+                print()
+                a = float(input('a: '))
+                b = float(input('b: '))
+                print()
+                pythagorean_theorem(a,b)
+                print()
+            if n == '3':
+                print('Please enter the numbers as if they are like\n(ax + b)(cx + d)')
+                a1 = float(input('a: '))
+                b1 = float(input('b: '))
+                a2 = float(input('c: '))
+                b2 = float(input('d: '))
+                print()
+                multiply_binomials(a1,b1,a2,b2)
+                print()
+            if n == '4':
+                print()
+                x1 = float(input('x1: '))
+                y1 = float(input('y1: '))
+                x2 = float(input('x2: '))
+                y2 = float(input('y2: '))
+                print()
+                slope(x1,y1,x2,y2)
+                print()
+            if n == '5':
+                print()
+                print('Please enter your coordinates and the slope.')
+                #print('The slope MUST be a decimal.')
+                x1 = float(input('x1: '))
+                y1 = float(input('y1: '))
+                m = float(input('m (slope): '))
+                print()
+                slope_intercept_form(x1,y1,m)
+                print()
+            if n == '6':
+                print()
+                print('Please enter the radius of the circle')
+                r = float(input('Radius: '))
+                print()
+                print(circum(r))
+                print()
+            if n != '1' and n != '2' and n != '3' and n != '4' and n != '5' and n != '6' and n != '7':
+                print('That was not one of the listed choices!')
+            if n == '7':
+                print()
+                print('Thank you for using the math helper! :)')
+                print('Have a great day!')
+                break
+        except Exception as e:
             print()
-            x1 = float(input('x1: '))
-            y1 = float(input('y1: '))
-            x2 = float(input('x2: '))
-            y2 = float(input('y2: '))
+            print('That input was not valid! {}'.format(str(e)))
             print()
-            dist_formula(x1,y1,x2,y2)
-            print()
-        if n == '2':
-            print()
-            a = float(input('a: '))
-            b = float(input('b: '))
-            print()
-            pythagorean_theorem(a,b)
-            print()
-        if n == '3':
-            a1 = float(input('a: '))
-            b1 = float(input('b: '))
-            a2 = float(input('c: '))
-            b2 = float(input('d: '))
-            print()
-            multiply_binomials(a1,b1,a2,b2)
-            print()
-        if n == '4':
-            print()
-            x1 = float(input('x1: '))
-            y1 = float(input('y1: '))
-            x2 = float(input('x2: '))
-            y2 = float(input('y2: '))
-            print()
-            slope(x1,y1,x2,y2)
-            print()
-        if n == '5':
-            print()
-            print('Please enter your coordinates and the slope.')
-            x1 = float(input('x1: '))
-            y1 = float(input('y1: '))
-            m = float(input('m: '))
-            print()
-            slope_intercept_form(x1,y1,m)
-            print()
-        if n == '6':
-            print()
-            print('Please enter the radius of the circle')
-            r = float(input('Radius: '))
-            print()
-            print(circum(r))
-            print()
-        if n != '1' and n != '2' and n != '3' and n != '4' and n != '5' and n != '6' and n != '7':
-            print('That was not one of the listed choices!')
-        if n == '7':
-            print()
-            print('Thank you for using the calculator.')
-            print('Have a great day!')
-            break
-
+            main()
+            
 
 if __name__ == "__main__":
     main()
     import doctest
     doctest.testmod()
-
-
 print()
