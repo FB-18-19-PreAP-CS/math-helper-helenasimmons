@@ -127,6 +127,33 @@ def slope_intercept_form(x1,y1,m):
     b = round(b,2)
     o = (f'y = {m}x + {b}')
     print(o)
+    
+def circum(r):
+    ''' returns he cirumference of a circle when given
+        the radius, rounded to 2 deciaml places
+        
+        >>> circum(5)
+        31.42
+        
+        >>> circum(0)
+        0.0
+        
+        >>> circum(10)
+        62.83
+        
+        >>> circum(20000)
+        125663.71
+        
+        >>> circum(-3)
+        'Radius cannot be negative'
+        
+    '''
+    if r < 0:
+        return 'Radius cannot be negative'
+    
+    c = round(math.pi * 2 * r ,2)
+    
+    return c
         
 def main():
     print('Hello there!')
@@ -139,8 +166,9 @@ def main():
         print('3. Multiply binomials in the form of (ax + b)(cx + d)')
         print('4. Find the slope between two points.')
         print('5. Point Slope Form')
+        print('6. Circumference')
         print()
-        print('6. Exit Program')
+        print('7. Exit Program')
         print()
         n = input('> ')
         if n == '1':
@@ -149,12 +177,14 @@ def main():
             y1 = float(input('y1: '))
             x2 = float(input('x2: '))
             y2 = float(input('y2: '))
+            print()
             dist_formula(x1,y1,x2,y2)
             print()
         if n == '2':
             print()
             a = float(input('a: '))
             b = float(input('b: '))
+            print()
             pythagorean_theorem(a,b)
             print()
         if n == '3':
@@ -171,6 +201,7 @@ def main():
             y1 = float(input('y1: '))
             x2 = float(input('x2: '))
             y2 = float(input('y2: '))
+            print()
             slope(x1,y1,x2,y2)
             print()
         if n == '5':
@@ -179,11 +210,19 @@ def main():
             x1 = float(input('x1: '))
             y1 = float(input('y1: '))
             m = float(input('m: '))
+            print()
             slope_intercept_form(x1,y1,m)
             print()
-        if n != '1' and n != '2' and n != '3' and n != '4' and n != '5' and n != '6':
-            print('That was not one of the listed choices!')
         if n == '6':
+            print()
+            print('Please enter the radius of the circle')
+            r = float(input('Radius: '))
+            print()
+            print(circum(r))
+            print()
+        if n != '1' and n != '2' and n != '3' and n != '4' and n != '5' and n != '6' and n != '7':
+            print('That was not one of the listed choices!')
+        if n == '7':
             print()
             print('Thank you for using the calculator.')
             print('Have a great day!')
