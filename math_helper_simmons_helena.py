@@ -202,6 +202,8 @@ def main():
                 print()
             if n == '4':
                 print()
+                print('(x1,y1,) (x2,y2)')
+                print()
                 x1 = float(input('x1: '))
                 y1 = float(input('y1: '))
                 x2 = float(input('x2: '))
@@ -239,7 +241,6 @@ def main():
             print()
             main()
             
-
 if __name__ == "__main__":
     main()
     import doctest
